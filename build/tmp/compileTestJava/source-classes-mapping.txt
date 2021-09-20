@@ -1,0 +1,2 @@
+cisco/mim/MimTest.java
+ cisco.mim.MimTest
