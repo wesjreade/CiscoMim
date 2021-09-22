@@ -5,18 +5,14 @@ import org.junit.jupiter.api.Test;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MimTest {
+class MimeTest {
     @Test
     void testKey_Invalid() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         rob.keyPress(KeyEvent.VK_K);
@@ -30,9 +26,7 @@ class MimTest {
     @Test
     void testKey_0() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         rob.keyPress(KeyEvent.VK_0);
@@ -46,9 +40,7 @@ class MimTest {
     @Test
     void testKey_E() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         rob.keyPress(KeyEvent.VK_E);
@@ -62,9 +54,7 @@ class MimTest {
     @Test
     void testKeyEnd_E() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         mim.mimKeyListener.setCaretPos(7);
@@ -79,9 +69,7 @@ class MimTest {
     @Test
     void testKey_$() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         rob.keyPress(KeyEvent.VK_SHIFT);
@@ -96,9 +84,7 @@ class MimTest {
     @Test
     void testKey_TW() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         rob.keyPress(KeyEvent.VK_T);
@@ -114,9 +100,7 @@ class MimTest {
     @Test
     void testKey_VE() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         mim.mimKeyListener.previousKeys.add(86);
@@ -131,9 +115,7 @@ class MimTest {
     @Test
     void testKeyEnd_VE() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         mim.mimKeyListener.previousKeys.add(86);
@@ -149,9 +131,7 @@ class MimTest {
     @Test
     void testKey_V$() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         mim.mimKeyListener.previousKeys.add(86);
@@ -165,11 +145,9 @@ class MimTest {
     }
 
     @Test
-    void testKey_VTW() throws AWTException {
+    void testKtwey_VTW() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
         Robot rob = new Robot();
         rob.keyPress(KeyEvent.VK_T);
@@ -186,11 +164,8 @@ class MimTest {
     @Test
     void testResetText() throws AWTException {
         String data = "hello world";
-        InputStream stdin = System.in;
         System.setIn(new ByteArrayInputStream(data.getBytes()));
-        Scanner in = new Scanner(System.in);
         Mim mim = new Mim();
-        Robot rob = new Robot();
         mim.mimTerminal.replaceRange("Hello Cisco", 0, 11);
         assert(!mim.mimTerminal.getText().equalsIgnoreCase("hello world"));
         mim.mimKeyListener.resetText(mim.mimTerminal, 0, 11, "hello world");

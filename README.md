@@ -9,6 +9,7 @@ gradlew build
 
 gradlew run
 - enter string less that 30 characters
+- java popup is terminal
 
 gradlew test
 
