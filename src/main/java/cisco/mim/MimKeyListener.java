@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class MimKeyListener {
     int caretPos;
     ArrayList<Integer> previousKeys = new ArrayList();
-    //public static final String TERMINAL_CONTENT = "hello world";
 
     public void addKeyListener(JTextArea mimTerminal) {
         String content = mimTerminal.getText();

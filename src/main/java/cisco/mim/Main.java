@@ -9,6 +9,5 @@ public class Main {
                 Mim mim = new Mim();
             }
         });
-        //Mim mim = new Mim();
     }
 }
