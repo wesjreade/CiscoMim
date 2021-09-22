@@ -14,8 +14,8 @@ public class Mim extends JFrame {
         setTitle("Cisco");
         System.out.println("Please enter some text up to 30 chars long.");
         String content = in.nextLine();
-        if(content.length() > 30) {
-            System.out.println("You have entered a string with too many characters, please enter some text up to 30 chars long.");
+        if(content.length() > 30 || content.length() == 0) {
+            System.out.println("You have entered an invalid string, please enter some text up to 30 chars long.");
             content = in.next();
         }
         JPanel panel = setUp(content);
