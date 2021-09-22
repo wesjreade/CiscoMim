@@ -1,8 +1,8 @@
-cisco/mim/Main.java
- cisco.mim.Main
- cisco.mim.Main$1
 cisco/mim/MimKeyListener.java
  cisco.mim.MimKeyListener
  cisco.mim.MimKeyListener$1
+cisco/mim/Main.java
+ cisco.mim.Main
+ cisco.mim.Main$1
 cisco/mim/Mim.java
  cisco.mim.Mim

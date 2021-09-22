@@ -1,17 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="cisco.mim.MimTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-09-20T22:02:36" hostname="DESKTOP-GCHLMUA" time="0.977">
+<testsuite name="cisco.mim.MimTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-09-22T17:34:32" hostname="DESKTOP-GCHLMUA" time="1.168">
   <properties/>
-  <testcase name="testKeyEnd_VE()" classname="cisco.mim.MimTest" time="0.569"/>
-  <testcase name="testResetText()" classname="cisco.mim.MimTest" time="0.052"/>
-  <testcase name="testKey_VTW()" classname="cisco.mim.MimTest" time="0.036"/>
+  <testcase name="testKeyEnd_VE()" classname="cisco.mim.MimTest" time="0.597"/>
+  <testcase name="testResetText()" classname="cisco.mim.MimTest" time="0.046"/>
+  <testcase name="testKey_VTW()" classname="cisco.mim.MimTest" time="0.077"/>
   <testcase name="testKey_$()" classname="cisco.mim.MimTest" time="0.036"/>
-  <testcase name="testKey_0()" classname="cisco.mim.MimTest" time="0.031"/>
-  <testcase name="testKey_E()" classname="cisco.mim.MimTest" time="0.045"/>
-  <testcase name="testKey_Invalid()" classname="cisco.mim.MimTest" time="0.042"/>
-  <testcase name="testKeyEnd_E()" classname="cisco.mim.MimTest" time="0.032"/>
-  <testcase name="testKey_TW()" classname="cisco.mim.MimTest" time="0.035"/>
-  <testcase name="testKey_V$()" classname="cisco.mim.MimTest" time="0.041"/>
-  <testcase name="testKey_VE()" classname="cisco.mim.MimTest" time="0.032"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="testKey_0()" classname="cisco.mim.MimTest" time="0.038"/>
+  <testcase name="testKey_E()" classname="cisco.mim.MimTest" time="0.034"/>
+  <testcase name="testKey_Invalid()" classname="cisco.mim.MimTest" time="0.056"/>
+  <testcase name="testKeyEnd_E()" classname="cisco.mim.MimTest" time="0.061"/>
+  <testcase name="testKey_TW()" classname="cisco.mim.MimTest" time="0.062"/>
+  <testcase name="testKey_V$()" classname="cisco.mim.MimTest" time="0.07"/>
+  <testcase name="testKey_VE()" classname="cisco.mim.MimTest" time="0.056"/>
+  <system-out><![CDATA[Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+Please enter some text up to 30 chars long.
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

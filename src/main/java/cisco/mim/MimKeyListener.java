@@ -11,9 +11,10 @@ import java.util.ArrayList;
 public class MimKeyListener {
     int caretPos;
     ArrayList<Integer> previousKeys = new ArrayList();
-    public static final String TERMINAL_CONTENT = "hello world";
+    //public static final String TERMINAL_CONTENT = "hello world";
 
     public void addKeyListener(JTextArea mimTerminal) {
+        String content = mimTerminal.getText();
         mimTerminal.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 try {
@@ -35,7 +36,7 @@ public class MimKeyListener {
 
                     //Multi Key
                     if(vtFlag==true || (previousKeys.contains(84) && vtFlag==false)) {
-                        resetText(mimTerminal, 0, mimTerminal.getDocument().getLength());
+                        resetText(mimTerminal, 0, mimTerminal.getDocument().getLength(), content);
                         int p1 = vtFlag == true ? getCaretPos() - 1 : mimTerminal.getText().indexOf(evt.getKeyChar()) - 1;
                         int p2 = vtFlag == true ? mimTerminal.getText().indexOf(evt.getKeyChar()) : p1 + 1;
                         highLightArea(mimTerminal, p1, p2);
@@ -47,14 +48,14 @@ public class MimKeyListener {
                         if (keyCode == 69) {
                             int p1 = getCaretPos();
                             int p2 = p1 >= 6 ? mimTerminal.getText().length() - 1 : mimTerminal.getText().indexOf(" ") - 1;
-                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength());
+                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength(), content);
                             highLightArea(mimTerminal, p1 - 1, p2 - 1);
                             setCaretPos(p1 <= 6 ? mimTerminal.getText().indexOf(" ") : mimTerminal.getDocument().getLength() - 1);
                             previousKeys.clear();
                         } else if (keyCode == 52) {
                             int p1 = 0;
                             int p2 = mimTerminal.getDocument().getLength();
-                            resetText(mimTerminal, p1, p2);
+                            resetText(mimTerminal, p1, p2, content);
                             highLightArea(mimTerminal, p1, mimTerminal.getDocument().getLength());
                             setCaretPos(mimTerminal.getDocument().getLength());
                             previousKeys.clear();
@@ -65,19 +66,19 @@ public class MimKeyListener {
                     } else {
                         previousKeys.add(keyCode);
                         if (keyCode == 48) {
-                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength());
+                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength(), content);
                             highLightArea(mimTerminal, 0, 1);
                             setCaretPos(1);
                             previousKeys.clear();
                         } else if (keyCode == 52) {
-                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength());
+                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength(), content);
                             highLightArea(mimTerminal, mimTerminal.getDocument().getLength() - 1, mimTerminal.getDocument().getLength());
                             setCaretPos(mimTerminal.getDocument().getLength());
                             previousKeys.clear();
                         } else if (keyCode == 69) {
                             int p1 = getCaretPos() <= 6 ? mimTerminal.getText().indexOf(" ") - 1 : mimTerminal.getDocument().getLength() - 1;
                             int p2 = p1 + 1;
-                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength());
+                            resetText(mimTerminal, 0, mimTerminal.getDocument().getLength(), content);
                             highLightArea(mimTerminal, p1 - 1, p2 - 1);
                             setCaretPos(p1 <= 6 ? mimTerminal.getText().indexOf(" ") : mimTerminal.getDocument().getLength() - 1);
                             previousKeys.clear();
@@ -86,7 +87,7 @@ public class MimKeyListener {
                         evt.consume();
                     }
                 } catch(Exception ex) {
-                    resetText(mimTerminal, 0, mimTerminal.getDocument().getLength());
+                    resetText(mimTerminal, 0, mimTerminal.getDocument().getLength(), content);
                     setCaretPos(1);
                     previousKeys.clear();
                 }
@@ -108,8 +109,8 @@ public class MimKeyListener {
         highlighter.addHighlight(p1, p2, painter);
     }
 
-    public void resetText(JTextArea mimTerminal, int p1, int p2) {
-        mimTerminal.replaceRange(TERMINAL_CONTENT, p1, p2);
+    public void resetText(JTextArea mimTerminal, int p1, int p2, String content) {
+        mimTerminal.replaceRange(content, p1, p2);
     }
 
 }

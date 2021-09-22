@@ -2,6 +2,11 @@ apply plugin: 'application'
 
 mainClassName = 'cisco.mim.Main'
 
+run {
+    standardInput = System.in
+    standardOutput = System.out
+}
+
 repositories {
     mavenCentral()
 }
